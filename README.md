@@ -13,49 +13,42 @@ Before starting make sure your raspberry pi is setup and that you can ssh into i
 
   1. Bring up the cross-compile environment:
 
-     ```
-
-     docker-compose up -d
-
-     ```
+```
+docker-compose up -d
+```
 
   2. Log into the running container:
 
-     ```
-     docker attach cross-compile
-     ```
+ ```
+docker attach cross-compile
+```
+
 ### Cross-compiling
 
 1. Clone the linux repo:
 
-     ```
-     git clone --depth=1 https://github.com/raspberrypi/linux
-     ```
+```
+git clone --depth=1 https://github.com/raspberrypi/linux
+```
   
-  1. Run the following commands to make the .config file:
+2. Run the following commands:
 
-     ```
-
-     cd linux
-     compilekernel
-
-     ```
+```
+cd linux
+compilekernel
+```
 
 ## Editing the kernel source inside /build/linux
 
 To connect to the NFS share, create a folder like `nfs-share` on your Mac and run the command:
   
 ```
-
 sudo mount -v -t nfs -o vers=4,port=2049 127.0.0.1:/ nfs-share
-
 ```
 ## Copying built Kernel via remote SSHFS filesystem
 
 ```
-
 PI_ADDRESS=10.0.100.170 copykernel
-
 ```
 
 
