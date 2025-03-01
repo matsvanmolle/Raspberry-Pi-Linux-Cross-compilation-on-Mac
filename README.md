@@ -1,3 +1,4 @@
+# Cross-compiling the Linux Kernel for the Raspberry Pi on Apple Silicon
 
 Cross compiling the linux kernel on an Apple Silicon based Mac comes with some challenges. There are two main problems. macOs has a case-insensitive filesystem, this means that 'file.txt' & 'File.txt' are the same file on macOs. Linux on the other hand uses a case-sensitive filesystem here are 'file.txt' and 'File.txt' two completely different and unrelated files. In the source code of linux there are multiple files with the same name but other capitalized letters, when compiling this on macOs these files will be missing. To solve this problem we will compile and store the kernel in a virtual machine i.e. a docker container.
 
